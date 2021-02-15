@@ -20,3 +20,12 @@ python $HOME/user/git/ProverbaroMontrilo/proverbo.py
 ```
 
 Memoru ŝanĝi la dosierindikon al la loko ĝusta por la propra komputilo.
+
+## Ekzemplo
+
+<p align="center">
+  <img src='ekzemplo.png' width='500' title='Neofetch kaj ProverbarMontrilo'>
+</p>
+
+Ekzemplo de nova terminala fenestro kun rulo de [Neofetch](https://github.com/dylanaraps/neofetch) kaj ProverbaroMontrilo.
+
