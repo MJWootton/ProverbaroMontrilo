@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """
-Montru hazardan lineon el la Proverbaro
+Montru hazardan linion el la Proverbaro
 Mark Wootton
 
 """

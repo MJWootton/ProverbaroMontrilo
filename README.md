@@ -1,5 +1,5 @@
 # ProverbaroMontrilo
-Promgrameto por Montri Hazardan Lineon el la Proverbaro
+Promgrameto por Montri Hazardan Linion el la Proverbaro
 
 ## Bezonaĵoj
 
@@ -19,7 +19,7 @@ Por montri plurajn proverbojn, oni povas skribi entjeran kvanton kiel komandlini
  $ python proverbo.py 10
 ```
 
-Mi kreis ĉi tiun programeton por montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de lineo kiel:
+Mi kreis ĉi tiun programeton por montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de linio kiel:
 
 ```bash
 python $HOME/user/git/ProverbaroMontrilo/proverbo.py
