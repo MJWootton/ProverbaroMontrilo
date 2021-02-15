@@ -35,3 +35,6 @@ Memoru ŝanĝi la dosierindikon al la loko ĝusta por la propra komputilo.
 
 Ekzemplo de nova terminala fenestro kun rulo de [Neofetch](https://github.com/dylanaraps/neofetch) kaj ProverbaroMontrilo.
 
+### Agnosko
+
+Dankon al www.proverbaro.net pro la fonto de la proverboj.
