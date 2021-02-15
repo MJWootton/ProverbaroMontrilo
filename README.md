@@ -13,6 +13,12 @@ Rulu terminale la programeton per:
 $ python proverbo.py
 ```
 
+Por montri plurajn proverbojn, oni povas skribi entjeran kvanton kiel komandlinian argumenton, ekzemple:
+
+```shell
+ $ python proverbo.py 10
+```
+
 Mi kreis ĉi tiun programeton por montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de lineo kiel:
 
 ```bash

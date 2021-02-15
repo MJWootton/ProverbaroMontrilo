@@ -23,8 +23,13 @@ def main():
     # Legi dosieron kaj konservi la proverbojn
     for lineo in dosiero:
         proverbaro.append(lineo.strip('\n'))
-    # Elekti hazardan proverbon kaj montri ĝin
-    print(textwrap.fill(proverbaro[random.randint(0,len(proverbaro)-1)], shutil.get_terminal_size()[0]))
+    # Trovi kiam da proverboj estas dezirate
+    n = 1
+    if len(sys.argv) > 1:
+        n = int(sys.argv[1])
+    for i in range(n):
+        # Elekti hazardan proverbon kaj montri ĝin
+        print(textwrap.fill(proverbaro[random.randint(0,len(proverbaro)-1)], shutil.get_terminal_size()[0]))
     # Fermi dosieron
     dosiero.close()
 
