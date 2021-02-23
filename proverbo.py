@@ -21,8 +21,8 @@ def main():
     # Malfermi la dosieron, kiu enhavas la Proverbaron
     dosiero = open(os.path.join(os.getcwd(), 'proverbaro.txt'), 'r', encoding='utf8')
     # Legi dosieron kaj konservi la proverbojn
-    for lineo in dosiero:
-        proverbaro.append(lineo.strip('\n'))
+    for linio in dosiero:
+        proverbaro.append(linio.strip('\n'))
     # Trovi kiam da proverboj estas dezirate
     n = 1
     if len(sys.argv) > 1:
