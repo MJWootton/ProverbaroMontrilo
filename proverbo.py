@@ -35,7 +35,6 @@ def cxeffunkcio(optioj):
     if optioj.dosieraro is None:
         proverbaro = defauxltaProverbaro()
     else:
-        # Krei liston por enhavi eblaj proverboj
         proverbaro = []
         # Se la uzanto petis, ke la proverboj estu legitaj el dosiero, sed donis neniun indikon, la defaŭlta dosierindiko estas uzita
         if not len(optioj.dosieraro):
