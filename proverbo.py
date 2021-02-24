@@ -25,8 +25,8 @@ def cxeffunkcio(optioj):
         Komandliniaj optioj
 
     """
-    # Se la uzanto petas nulon da proveroj, estas nenio ajn por fari
-    if not optioj.nombro:
+    # Se la uzanto petas nulon aŭ malpli da proveroj, estas nenio ajn por fari
+    if optioj.nombro <= 0:
         sys.exit()
 
     # Ŝanĝi la kurantan dosierujon al tiu de ĉi tiu programo
