@@ -3,7 +3,7 @@ Promgrameto por Montri Hazardan Linion el la Proverbaro
 
 ## Bezonaĵoj
 
-- Python (mi uzis version trian)
+- [Python 3](https://www.python.org/)
 
 ## Uzado
 
@@ -18,6 +18,14 @@ Por montri plurajn proverbojn, oni povas skribi entjeran kvanton kiel komandlini
 ```shell
  $ python proverbo.py 10
 ```
+
+Se oni volus uzi malsaman liston de proveroj, oni povas doni ilin per listo de tekstdosieroj post la etikedo `-f`, ekzemple:
+
+```shell
+$ python proverbo.py -f dosieroA.txt dosieroB.txt
+```
+
+Se oni donas la etikedon `-f` sen listo de dosieroj, la programeto serĉos la dosieron `proverbaro.txt` en sia propra dosierujo.
 
 Mi kreis ĉi tiun programeton por montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de linio kiel:
 
