@@ -57,7 +57,7 @@ def cxeffunkcio(optioj):
     N = optioj.nombro
     P = len(proverbaro)-1
     montrotoj = []
-    # Se la uzanto volas plurajn proverbojn, la sama proverbo ne estos ripetita, ĝis ĉiuj estos uzita egalfoje
+    # Se la uzanto volas plurajn proverbojn, la sama proverbo ne estos ripetita, ĝis ĉiuj estos uzitaj egalfoje
     while True:
         if N>P:
             montrotoj += random.sample(proverbaro, P)
