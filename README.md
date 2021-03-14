@@ -27,7 +27,9 @@ $ python proverbo.py -f dosieroA.txt dosieroB.txt
 
 Se oni donas la etikedon `-f` sen listo de dosieroj, la programeto serĉos la dosieron `proverbaro.txt` en sia propra dosierujo.
 
-Mi kreis ĉi tiun programeton por montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de linio kiel:
+Oni povas aldoni la etikedojn `-H` kaj `-X` por montri la proverbojn laŭ aŭ la H-sistemo aŭ X-sistemo. Kaze de oni elektas ambaŭ, la H-sistemo estos uzita.
+
+La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de linio kiel:
 
 ```bash
 python $HOME/user/git/ProverbaroMontrilo/proverbo.py

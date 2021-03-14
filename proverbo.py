@@ -15,6 +15,20 @@ import random
 import shutil
 import textwrap
 
+def komandliniajOptioj():
+    """
+    Legi komandliniajn optiojn aŭ montri helptekson
+
+    """
+    parser = argparse.ArgumentParser(prog='ProverbaroMontrilo', description='Montru hazardan linion el la Proverbaroo', epilog='Se oni elektas opciojn kaj -H kaj -X, la H-sistemo estos uzita.')
+    parser.add_argument('nombro', nargs='?', default=1, type=int, help='Nombro da probervoj montri.')
+    parser.add_argument('-f', dest='dosieraro', nargs='*', default=None, type=str, help='Unu aŭ pluraj dosierindikoj enhavantaj la montrotajn proverbojn') # argparse.FileType('w', encoding='UTF-8')
+    parser.add_argument('-H', dest='H', action='store_true', help='Uzi H-Systemon')
+    parser.add_argument('-X', dest='X', action='store_true', help='Uzi X-Systemon')
+    optioj = parser.parse_args()
+    return optioj
+    # Noto: Estus bone traduki la plenon helptekson
+
 def cxeffunkcio(optioj):
     """
     La ĉefa funkcio por legi kaj montri proverbojn
@@ -53,6 +67,17 @@ def cxeffunkcio(optioj):
         if not len(proverbaro):
             sys.exit('Mankas iom ajn da legeblaj dosieroj.')
 
+    # Konverti la literumsistemon de la proverbaro al la H-sistemo aŭ X-sistemo
+    if optioj.H or optioj.X:
+        cxapelitaj = ['ĉ', 'ĝ', 'ĥ', 'ĵ', 'ŝ', 'ŭ']
+        if optioj.H:
+            senCxapelaj = ['ch', 'gh', 'hh', 'jh', 'sh', 'u']
+        elif optioj.X:
+            senCxapelaj = ['cx', 'gx', 'hx', 'jx', 'sx', 'ux']
+        for i in range(len(proverbaro)):
+            for j in range(len(cxapelitaj)):
+                proverbaro[i] = proverbaro[i].replace(cxapelitaj[j], senCxapelaj[j])
+
     # Elekti tiom da proverboj, kiom estas dezirataj de la uzanto.
     N = optioj.nombro
     P = len(proverbaro)-1
@@ -69,18 +94,6 @@ def cxeffunkcio(optioj):
     # Montri proverbojn.
     for proverbo in montrotoj:
         print(textwrap.fill(proverbo, shutil.get_terminal_size()[0]))
-
-def komandliniajOptioj():
-    """
-    Legi komandliniajn optiojn aŭ montri helptekson
-
-    """
-    parser = argparse.ArgumentParser(prog='ProverbaroMontrilo', description='Montru hazardan linion el la Proverbaroo')
-    parser.add_argument('nombro', nargs='?', default=1, type=int, help='Nombro da probervoj montri.')
-    parser.add_argument('-f', dest='dosieraro', nargs='*', default=None, type=str, help='Unu aŭ pluraj dosierindikoj enhavantaj la montrotajn proverbojn') # argparse.FileType('w', encoding='UTF-8')
-    optioj = parser.parse_args()
-    return optioj
-    # Noto: Estus bone traduki la plenon helptekson
 
 def defauxltaProverbaro():
     """
