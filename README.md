@@ -35,7 +35,7 @@ La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam
 python $HOME/git/ProverbaroMontrilo/proverbo.py
 ```
 
-Simile, oni povas fari ĉi tion en la Vindoza Potenca-Ŝelo (*Windows PowerShell*). Kreu dosieron ĉe `C:\Users\{ONIA_UZANTNOMO}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` se ĝi ankoraŭ ne ekzistas kaj aldonu la linion
+Simile, oni povas fari ĉi tion en la Vindoza Potenca-Ŝelo (*Windows PowerShell*). Kreu dosieron ĉe `C:\Users\{ONIA_UZANTNOMO}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` se ĝi ankoraŭ ne ekzistas kaj aldonu la linion:
 
 ```powershell
 python C:\Users\{ONIA_UZANTNOMO}\git\ProverboMontrilo\proverbo.py
