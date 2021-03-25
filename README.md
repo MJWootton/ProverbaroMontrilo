@@ -29,7 +29,7 @@ Se oni donas la etikedon `-f` sen listo de dosieroj, la programeto serĉos la do
 
 Oni povas aldoni la etikedojn `-H` kaj `-X` por montri la proverbojn laŭ aŭ la H-sistemo aŭ X-sistemo. Kaze de oni elektas ambaŭ, la H-sistemo estos uzita.
 
-La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam nova terminala fenestro estas malfermita. En Baŝo (*Bash*) aŭ ZSH-ŝelo oni povas fari ĉi tion per la aldono de la suba linio al `~/.bashrc` aŭ `~/.zshrc` respektive:
+La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam nova terminala fenestro estas malfermita. En Baŝo (*Bash*) aŭ Z-Ŝelo oni povas fari ĉi tion per la aldono de la suba linio al `~/.bashrc` aŭ `~/.zshrc` respektive:
 
 ```bash
 python $HOME/git/ProverbaroMontrilo/proverbo.py
