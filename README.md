@@ -29,7 +29,7 @@ Se oni donas la etikedon `-f` sen listo de dosieroj, la programeto serĉos la do
 
 Oni povas aldoni la etikedojn `-H` kaj `-X` por montri la proverbojn laŭ aŭ la H-sistemo aŭ X-sistemo. Kaze de oni elektas ambaŭ, la H-sistemo estos uzita.
 
-La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam nova terminala fenestro estas malfermita. En baŝo (*bash*) oni povas fari ĉi tion per la aldono al `~/.bashrc` de linio kiel:
+La celo malantaŭ la kreo de ĉi tiu programeto estis montri proverbaranon, kiam nova terminala fenestro estas malfermita. En Baŝo (*Bash*) aŭ ZSH-ŝelo oni povas fari ĉi tion per la aldono de la suba linio al `~/.bashrc` aŭ `~/.zshrc` respektive:
 
 ```bash
 python $HOME/git/ProverbaroMontrilo/proverbo.py
@@ -38,7 +38,7 @@ python $HOME/git/ProverbaroMontrilo/proverbo.py
 Simile, oni povas fari ĉi tion en la Vindoza Potenca-Ŝelo (*Windows PowerShell*). Kreu dosieron ĉe `C:\Users\{ONIA_UZANTNOMO}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` se ĝi ankoraŭ ne ekzistas kaj aldonu la linion:
 
 ```powershell
-python C:\Users\{ONIA_UZANTNOMO}\git\ProverboMontrilo\proverbo.py
+python $home\git\ProverboMontrilo\proverbo.py
 ```
 
 Ambaŭkaze, memoru ŝanĝi la dosierindikon al la loko ĝusta por la propra komputilo.
