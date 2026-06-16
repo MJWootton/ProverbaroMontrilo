@@ -15,9 +15,9 @@ import random
 import shutil
 import textwrap
 
-def komandliniajOptioj():
+def komandliniajopcioj():
     """
-    Legi komandliniajn optiojn aŭ montri helptekson
+    Legi komandliniajn opciojn aŭ montri helptekson
 
     """
     parser = argparse.ArgumentParser(prog='ProverbaroMontrilo', description='Montru hazardan linion el la Proverbaroo', epilog='Se oni elektas opciojn kaj -H kaj -X, la H-sistemo estos uzita.')
@@ -25,36 +25,37 @@ def komandliniajOptioj():
     parser.add_argument('-f', dest='dosieraro', nargs='*', default=None, type=str, help='Unu aŭ pluraj dosierindikoj enhavantaj la montrotajn proverbojn') # argparse.FileType('w', encoding='UTF-8')
     parser.add_argument('-H', dest='H', action='store_true', help='Uzi H-Systemon')
     parser.add_argument('-X', dest='X', action='store_true', help='Uzi X-Systemon')
-    optioj = parser.parse_args()
-    return optioj
+    parser.add_argument('-m', '--maksimumlongo', nargs='?', default=None, type=int, help='La plej longa linio montrebla')
+    opcioj = parser.parse_args()
+    return opcioj
     # Noto: Estus bone traduki la plenon helptekson
 
-def cxeffunkcio(optioj):
+def cxeffunkcio(opcioj):
     """
     La ĉefa funkcio por legi kaj montri proverbojn
 
     Enigoj
     ----------
-    optioj : argparse.ArgumentParser
-        Komandliniaj optioj
+    opcioj : argparse.ArgumentParser
+        Komandliniaj opcioj
 
     """
     # Se la uzanto petas nulon aŭ malpli da proveroj, estas nenio ajn por fari
-    if optioj.nombro <= 0:
+    if opcioj.nombro <= 0:
         sys.exit()
 
     # Ŝanĝi la kurantan dosierujon al tiu de ĉi tiu programo
     os.chdir(Path(__file__).parent)
     # Krei liston por teni la proverbojn
-    if optioj.dosieraro is None:
+    if opcioj.dosieraro is None:
         proverbaro = defauxltaProverbaro()
     else:
         proverbaro = []
         # Se la uzanto petis, ke la proverboj estu legitaj el dosiero, sed donis neniun indikon, la defaŭlta dosierindiko estas uzita
-        if not len(optioj.dosieraro):
-            optioj.dosieraro = ['proverbaro.txt']
+        if not len(opcioj.dosieraro):
+            opcioj.dosieraro = ['proverbaro.txt']
         # Trairi ĉiujn dosierojn de proverboj
-        for dosiero in optioj.dosieraro:
+        for dosiero in opcioj.dosieraro:
             try:
                 # Legi dosieron
                 with open(os.path.join(os.getcwd(), dosiero), 'r', encoding='utf8') as nunaDosiero:
@@ -68,18 +69,27 @@ def cxeffunkcio(optioj):
             sys.exit('Mankas iom ajn da legeblaj dosieroj.')
 
     # Konverti la literumsistemon de la proverbaro al la H-sistemo aŭ X-sistemo
-    if optioj.H or optioj.X:
+    if opcioj.H or opcioj.X:
         cxapelitaj = ['ĉ', 'ĝ', 'ĥ', 'ĵ', 'ŝ', 'ŭ']
-        if optioj.H:
+        if opcioj.H:
             senCxapelaj = ['ch', 'gh', 'hh', 'jh', 'sh', 'u']
-        elif optioj.X:
+        elif opcioj.X:
             senCxapelaj = ['cx', 'gx', 'hx', 'jx', 'sx', 'ux']
         for i in range(len(proverbaro)):
             for j in range(len(cxapelitaj)):
                 proverbaro[i] = proverbaro[i].replace(cxapelitaj[j], senCxapelaj[j])
 
+    # Forigi ĉiujn proverbojn pli longajn ol la maksimumo dezirataj de la uzanto
+    plenaListo = len(proverbaro)
+    for pi in range(len(proverbaro)):
+        pii = plenaListo-1-pi
+        if len(proverbaro[pii]) > opcioj.maksimumlongo:
+            proverbaro.pop(pii)
+    if not len(proverbaro):
+        sys.exit(f'Neniu proverbo havas longon malpli ol {opcioj.maksimumlongo} signo' + ('j' if opcioj.maksimumlongo == 1 else '') + '.' )
+
     # Elekti tiom da proverboj, kiom estas dezirataj de la uzanto.
-    N = optioj.nombro
+    N = opcioj.nombro
     P = len(proverbaro)-1
     montrotoj = []
     # Se la uzanto volas plurajn proverbojn, la sama proverbo ne estos ripetita, ĝis ĉiuj estos uzitaj egalfoje
@@ -2705,8 +2715,6 @@ def defauxltaProverbaro():
     'Ŝuldoj kaj mizero estas najbaroj',
     'Ŝuldo kaj mizero estas najbaroj',
     'Ŝuldo ne bruas, tamen dormon detruas',
-    '',
-    '',
     'Ŝuldo ne makulas, sed pagon postulas',
     'Ŝuldo ne rustiĝas, ŝuldo ne mortiĝas',
     'Ŝuldon tempo ne kuracas',
@@ -2943,4 +2951,4 @@ def defauxltaProverbaro():
     return proverbaro
 
 if __name__ == '__main__':
-    cxeffunkcio(komandliniajOptioj())
+    cxeffunkcio(komandliniajopcioj())
