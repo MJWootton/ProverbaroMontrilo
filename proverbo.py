@@ -80,13 +80,14 @@ def cxeffunkcio(opcioj):
                 proverbaro[i] = proverbaro[i].replace(cxapelitaj[j], senCxapelaj[j])
 
     # Forigi ĉiujn proverbojn pli longajn ol la maksimumo dezirataj de la uzanto
-    plenaListo = len(proverbaro)
-    for pi in range(len(proverbaro)):
-        pii = plenaListo-1-pi
-        if len(proverbaro[pii]) > opcioj.maksimumlongo:
-            proverbaro.pop(pii)
-    if not len(proverbaro):
-        sys.exit(f'Neniu proverbo havas longon malpli ol {opcioj.maksimumlongo} signo' + ('j' if opcioj.maksimumlongo == 1 else '') + '.' )
+    if opcioj.maksimumlongo is not None:
+        plenaListo = len(proverbaro)
+        for pi in range(len(proverbaro)):
+            pii = plenaListo-1-pi
+            if len(proverbaro[pii]) > opcioj.maksimumlongo:
+                proverbaro.pop(pii)
+        if not len(proverbaro):
+            sys.exit(f'Neniu proverbo havas longon malpli ol {opcioj.maksimumlongo} signo' + ('j' if opcioj.maksimumlongo == 1 else '') + '.' )
 
     # Elekti tiom da proverboj, kiom estas dezirataj de la uzanto.
     N = opcioj.nombro
